@@ -204,7 +204,6 @@ bool RotationCondition(Blocks* hook[], std::vector<std::vector<Blocks*>>& board)
 		{
 			if (centerX - 1 + j < 0 || centerX - 1 + j >= 10 || centerY - 1 + j < 0 || centerY - 1 + j >= 17)
 			{
-				std::cout << "false" << "\n";
 				return false;
 			}
 			temp[i][j] = *board[centerX-1+j][centerY-1+i];
@@ -397,15 +396,7 @@ void Rotation(Blocks* hook[], std::vector<std::vector<Blocks*>>& board,sf::Textu
 				board[centerX - 1 + j][centerY - 1 + i]->SetUnactiveState();
 				board[centerX - 1 + j][centerY - 1 + i]->ChangeIsHooked();
 			}
-			if (temp[i][j].IsBlockState())
-			{
-				std::cout << "X"<<" ";
-			}
-			else {
-				std::cout << "O"<<" ";
-			}
 		}
-		std::cout << "\n";
 	}
 	for (int i = 0; i < 3; i++)
 	{
@@ -505,15 +496,7 @@ void IRotation(Blocks* hook[], std::vector<std::vector<Blocks*>>& board, sf::Tex
 				board[startX + j][startY + i]->SetUnactiveState();
 				board[startX + j][startY + i]->ChangeIsHooked();
 			}
-			if (temp[i][j].IsBlockState())
-			{
-				std::cout << "X" << " ";
-			}
-			else {
-				std::cout << "O" << " ";
-			}
 		}
-		std::cout << "\n";
 	}
 	for (int i = 0; i < 4; i++)
 	{
